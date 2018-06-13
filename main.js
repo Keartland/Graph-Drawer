@@ -34,7 +34,8 @@ function clicked(event){
   canvasY = event.pageY - (this.offsetTop - this.scrollTop);
   onNode={on:false,i:0}
   for (i=0;i<nodes.length && !onNode.on;i++){
-    on = (nodes[i].x - nodes[i].r <= canvasX && nodes[i].x + nodes[i].r >= canvasX && nodes[i].y + nodes[i].r >= canvasY && nodes[i].y - nodes[i].r <= canvasY)
+    amount = 2*nodes[i].r
+    on = (nodes[i].x - amount <= canvasX && nodes[i].x + amount >= canvasX && nodes[i].y + amount >= canvasY && nodes[i].y - amount <= canvasY)
     onNode={on:on,i:i}
   }
   if (event.button == 0){
